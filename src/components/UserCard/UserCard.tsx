@@ -14,6 +14,8 @@ export interface Coordinates {
 
 export interface User {
     // TODO compléter cette interface
+    // techniquement, elle doit contenir des informations similaires à ce qui est renvoyé par l'API utilisée
+    // le endpoint utilisé est le suivant : https://jsonplaceholder.typicode.com/users
 }
 
 export const UserCard = ({ user } : { user: User }) => {

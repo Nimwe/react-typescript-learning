@@ -28,22 +28,30 @@ const RandomWordPage = () => {
 
     useEffect(() => {
         // TODO mettre quelque chose ici
-        // Question, quand ce déclenche la fonction associée à ce "useEffect" ?
+        // Question, quand se déclenche la fonction associée à ce "useEffect" ?
     }, [firstWord]);
 
     useEffect(() => {
         // TODO mettre quelque chose ici
-        // Question, quand ce déclenche la fonction associée à ce "useEffect" ?
+        // Question, quand se déclenche la fonction associée à ce "useEffect" ?
     }, [secondWord]);
 
     useEffect(() => {
         // TODO mettre quelque chose ici
-        // Question, quand ce déclenche la fonction associée à ce "useEffect" ?
+        // Question, quand se déclenche la fonction associée à ce "useEffect" ?
     }, []) // tableau de dépendances à des variables d'état vide ! Qu'est ce ça fait ?
 
     useEffect(() => {
         // TODO mettre quelque chose ici
-        // Question, quand ce déclenche la fonction associée à ce "useEffect" ?
+        // Question, quand se déclenche la fonction associée à ce "useEffect" ?
+
+
+        // Si dans une lambda de useEffect nous avons un "return" alors nous pouvons renvoyer une fonction de démontage
+        // Cette fonction sera déclenchée lorsque le composant sera retiré du DOM (par exemple si nous changeons de page)
+        return () => {
+            // TODO : Mettre ici le code à exécuter lors du démontage
+            // Par exemple : ajoutez un appel à la fonction Javascript « alert() » permettant d'indiquer un message particulier
+        };
     });
 
     /**

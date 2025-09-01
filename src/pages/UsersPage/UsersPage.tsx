@@ -21,10 +21,11 @@ const UsersPage = () => {
     }, []);
 
     return (
-        {
-        // TODO faire interface graphique pour la liste des utilisateurs
-        // Pour générer les "cards" utilisateur veillez à vous servir du composant "UserCard
-        }
+        <p>TODO</p>
+        // {
+        // // TODO faire interface graphique pour la liste des utilisateurs
+        // // Pour générer les "cards" utilisateur veillez à vous servir du composant "UserCard
+        // }
     );
 
 }
