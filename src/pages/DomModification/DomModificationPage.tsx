@@ -53,23 +53,23 @@ const DomModificationPage = () => {
      */
     const toggleParagraphStyle = () => {
         // tentative de récupération de l'élément HTML paragraphe
-        let paragraph = ?????;
+        //let paragraph = ?????;
 
-        if (paragraph != null) {
+        //if (paragraph != null) {
             // il est possible d'activer ou désactiver une classe en uilisant la méthode JS "toggle"
             // exemple d'utilisation : https://www.w3schools.com/howto/howto_js_toggle_class.asp
 
             // vérification si classe "highlighted" présente
-            const isHighlighted = paragraph.classList.contains(styles.highlighted);
+            //const isHighlighted = paragraph.classList.contains(styles.highlighted);
 
-            if (isHighlighted) { // si c'est bien "highlighted"
+            //if (isHighlighted) { // si c'est bien "highlighted"
                 // TODO insérer un toggle pour passer en normal
                 // paragraph.classList.toggle( ????????? )
-            } else {
+            //} else {
                 // TODO insérer un toggle pour passer en highlighted
 
-            }
-        }
+           // }
+       // }
     };
 
     return (

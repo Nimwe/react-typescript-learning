@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import styles from "./ClockPage.module.css";
 
@@ -7,31 +7,57 @@ import styles from "./ClockPage.module.css";
  */
 const ClockPage = () => {
 
-    // TODO déclarer un state permettant de stocker la date et l'heure actuelle
-    // Indice sur ce qu'il faudrait stocker : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Date
-    
+    // Déclarer un state permettant de stocker la date et l'heure actuelle
+    // (Indice sur ce qu'il faudrait stocker : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Date)
+    const [time, setTime] = useState(new Date());
+    const intervalRef = useRef<number | null>(null);
 
-    useEffect(() => {
-
-    }, []);
 
     /**
-     * TODO fonction permettant de démarrer l'horloge
+     * Fonction permettant de démarrer l'horloge
      */
     function handleStartClick() {
+        if (!intervalRef.current) { // Vérification pour ne pas relancer un interval déjà actif
+            intervalRef.current = setInterval(() => {
+                setTime(new Date());
+
+            }, 1000); // Toutes les secondes
+        }
     }
 
-        
+
     /**
-     * TODO fonction permettant de stopper l'horloge
+     * Fonction permettant de stopper l'horloge
      */
     function handleStopClick() {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+        }
 
     }
+
+    /**
+     * Rendu sur l'interface graphique
+     */
+    useEffect(() => {
+        return () => {
+            if (intervalRef.current !== null) {
+                clearInterval(intervalRef.current)
+            }
+        };
+    }, []);
 
     return (
         <div className={styles.clockContainer}>
-            {/* TODO implémenter l'interface graphique de l'horloge */}
+            <h1>Horloge intéractive</h1>
+            <p>{time.toLocaleTimeString()}</p>
+
+            <div className={styles.buttons}>
+                <button onClick={handleStartClick}>Démarrer</button>
+                <button onClick={handleStopClick}>Arrêter</button>
+
+            </div>
         </div>
     );
 }
